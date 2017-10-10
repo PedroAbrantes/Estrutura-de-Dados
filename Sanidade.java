@@ -3,7 +3,7 @@ package edexercicio2;
 import java.util.*;
 import java.lang.*;
 
-class LDE2 {
+class LDE {
 	
     class No {
 	private No ant;
@@ -43,7 +43,7 @@ class LDE2 {
 	private No fim;
 	private int tamanho;
 	
-	public LDE2(){
+	public LDE(){
 		inicio = null;
 		fim = null;		
 		tamanho = 0;
@@ -312,7 +312,8 @@ class LDE2 {
 	    }
 	}	
 }
-public class Sanidade {
+
+class Sanidade {
     
     public static boolean isSane(String s1, String s2, int dif)
     {
