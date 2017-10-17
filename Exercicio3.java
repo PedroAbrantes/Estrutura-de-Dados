@@ -348,18 +348,23 @@ public class Exercicio3 {
         LDE minhaLista = new LDE();
         String in;
         String[] s;
+        String[] command;
         int qtde;
         boolean reverse = false;
         
         qtde = scan.nextInt();
+        command = new String[qtde + 1];
         
         if(qtde > 1 && qtde <= 1000000)
         {
-            for(int i = 0; i <= qtde; i++)
+            for(int j = 0; j <= qtde; j++)
             {
-            in = scan.nextLine();
-            s = in.split(" ");
+                command[j] = scan.nextLine();
+            }
             
+            for(int i = 0; i <= qtde; i++)
+            {   
+                s = command[i].split(" ");
                 switch(s[0])
                 {
                     case "back":
@@ -388,7 +393,7 @@ public class Exercicio3 {
                         }
                         break;
                     case "toFront":
-                        if(!reverse)
+                        if(!reverse || minhaLista.vazia())
                             minhaLista.insereInicioLista(Integer.parseInt(s[1]));
                         else
                         {
