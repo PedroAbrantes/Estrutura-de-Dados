@@ -64,14 +64,19 @@ class LDE {
     public boolean inverteLista(LDE lista)
     {
         if(vazia())
+        {
+            isreverse = false;
             return false;
-        LDE minhaLista = lista;
-        No aux = fim;
-        fim = inicio;
-        inicio = aux;
-        isreverse = !isreverse;
+        }
+        else{
+            LDE minhaLista = lista;
+            No aux = fim;
+            fim = inicio;
+            inicio = aux;
+            isreverse = !isreverse;
         
-        return true;
+            return true;
+        }
     }
     /** Verifica se a Lista estÃ¡ vazia */
     public boolean vazia() {
@@ -348,23 +353,18 @@ public class Exercicio3 {
         LDE minhaLista = new LDE();
         String in;
         String[] s;
-        String[] command;
         int qtde;
         boolean reverse = false;
         
         qtde = scan.nextInt();
-        command = new String[qtde + 1];
         
         if(qtde > 1 && qtde <= 1000000)
         {
-            for(int j = 0; j <= qtde; j++)
-            {
-                command[j] = scan.nextLine();
-            }
-            
             for(int i = 0; i <= qtde; i++)
-            {   
-                s = command[i].split(" ");
+            {
+            in = scan.nextLine();
+            s = in.split(" ");
+            
                 switch(s[0])
                 {
                     case "back":
@@ -406,34 +406,6 @@ public class Exercicio3 {
             }
         
         }
-        /*minhaLista.insere(1, 8);
-        minhaLista.insere(2, 5);
-        minhaLista.insere(3, 6);
-        minhaLista.insere(4, 9);
         
-        for(int i = 1; i <= 4; i++)
-        {
-            System.out.println(minhaLista.elemento(i));
-        }
-        
-        minhaLista.inverteLista(minhaLista);
-        
-        System.out.println("\ninvertido:\n");
-        
-        for(int i = 1; i <= 4; i++)
-        {
-            System.out.println(minhaLista.elemento(i));
-        }
-        
-        minhaLista.inverteLista(minhaLista);
-        minhaLista.insereInicioLista(7);
-        minhaLista.inverteLista(minhaLista);
-        
-        System.out.println("\ninvertido + 7:\n");
-        
-        for(int i = 1; i <= 5; i++)
-        {
-            System.out.println(minhaLista.elemento(i));
-        }*/
     }
 }
