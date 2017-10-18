@@ -264,17 +264,19 @@ class Adaqueue {
         qtde = scan.nextInt();
         command = new String[qtde + 1];
         
-        try{
-            if(qtde > 1 && qtde <= 1000000)
+        
+        if(qtde > 1 && qtde <= 1000000)
+        {
+            for(int j = 0; j <= qtde; j++)
             {
-                for(int j = 0; j <= qtde; j++)
-                {
-                    command[j] = scan.nextLine();
-                }
+                command[j] = scan.nextLine();
+            }
             
-                for(int i = 0; i <= qtde; i++)
-                {   
-                    s = command[i].split(" ");
+            for(int i = 0; i <= qtde; i++)
+            {   
+                s = command[i].split(" ");
+                try
+                {
                     switch(s[0])
                     {
                         case "back":
@@ -299,10 +301,10 @@ class Adaqueue {
                             minhaFila.insereInicio(Integer.parseInt(s[1]));
                             break;
                     }
-                }       
-            }
-        } catch(Exception e){
-            System.out.println("No job for Ada?");    
+                } catch(Exception e){
+                    System.out.println("No job for Ada?");    
+                }
+            }       
         }
     }
 }
