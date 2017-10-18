@@ -275,8 +275,7 @@ class Adaqueue {
             for(int i = 0; i <= qtde; i++)
             {   
                 s = command[i].split(" ");
-                try
-                {
+                try{
                     switch(s[0])
                     {
                         case "back":
