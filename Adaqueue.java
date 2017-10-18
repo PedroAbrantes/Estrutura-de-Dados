@@ -265,43 +265,42 @@ class Adaqueue {
         command = new String[qtde + 1];
         
         try{
-        if(qtde > 1 && qtde <= 1000000)
-        {
-            for(int j = 0; j <= qtde; j++)
+            if(qtde > 1 && qtde <= 1000000)
             {
-                command[j] = scan.nextLine();
-            }
-            
-            for(int i = 0; i <= qtde; i++)
-            {   
-                s = command[i].split(" ");
-                switch(s[0])
+                for(int j = 0; j <= qtde; j++)
                 {
-                    case "back":
-                        if(minhaFila.vazia())
-                            System.out.println("No job for Ada?");
-                        else
-                            System.out.println(minhaFila.back());
-                        break;
-                    case "front":
-                        if(minhaFila.vazia())
-                            System.out.println("No job for Ada?");
-                        else
-                            System.out.println(minhaFila.front());
-                        break;
-                    case "reverse":
-                        minhaFila.inverteFila();
-                        break;
-                    case "push_back":
-                        minhaFila.insereFim(Integer.parseInt(s[1]));
-                        break;
-                    case "toFront":
-                        minhaFila.insereInicio(Integer.parseInt(s[1]));
-                        break;
+                    command[j] = scan.nextLine();
                 }
+            
+                for(int i = 0; i <= qtde; i++)
+                {   
+                    s = command[i].split(" ");
+                    switch(s[0])
+                    {
+                        case "back":
+                            if(minhaFila.vazia())
+                                System.out.println("No job for Ada?");
+                            else
+                                System.out.println(minhaFila.back());
+                            break;
+                        case "front":
+                            if(minhaFila.vazia())
+                                System.out.println("No job for Ada?");
+                            else
+                                System.out.println(minhaFila.front());
+                            break;
+                        case "reverse":
+                            minhaFila.inverteFila();
+                            break;
+                        case "push_back":
+                            minhaFila.insereFim(Integer.parseInt(s[1]));
+                            break;
+                        case "toFront":
+                            minhaFila.insereInicio(Integer.parseInt(s[1]));
+                            break;
+                    }
+                }       
             }
-        
-        }
         } catch(Exception e){
             System.out.println("No job for Ada?");    
         }
