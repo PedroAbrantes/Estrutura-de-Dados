@@ -8,33 +8,33 @@ import java.lang.*;
     {
        
         Scanner entrada = new Scanner(System.in);
-        int no,cont= 0;
+        int no, cont= 0;
         int qtd = entrada.nextInt();
         int[] aux = new int[2];
         
-        for(int i=0;i<3;i++)
+        for(int i = 0; i < 3; i++)
         {
-            for (int j=0;j<qtd;j++)
+            for (int j = 0; j < qtd; j++)
             {
                 no = entrada.nextInt();
-                if(i==0 && j==0) 
+                if(i == 0 && j == 0) 
                     aux[0] = no;
                 
 
-                if(i==0 && j==qtd-1)
+                if(i == 0 && j == qtd - 1)
                     aux[1] = no;
             
 
-                if((i==1 && j==qtd-1) && aux[0]==no)
+                if((i == 1 && j == qtd - 1) && aux[0] == no)
                     cont++;
             
 
-                if(i==2 && j==qtd-1 && aux[1]==no) 
+                if(i == 2 && j == qtd - 1 && aux[1] == no) 
                     cont++;
             
             }
         }
-        if(cont==2)
+        if(cont == 2)
             System.out.println("yes");
         
         else
