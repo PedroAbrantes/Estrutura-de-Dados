@@ -110,7 +110,7 @@ class ABP {
     private void insert(No T, int x)
     {
         
-        if (raiz == null) { // Arvore vazia
+        if (raiz == null) {
             No node = new No();
             node.setConteudo(x);
             node.setEsq(null);
@@ -122,7 +122,8 @@ class ABP {
         counter++;
         No aux = T;
         
-        if (x < aux.getConteudo()) {
+        if (x < aux.getConteudo()) 
+	{
             if(aux.getEsq() == null)
             {
                 No node = new No();
@@ -149,41 +150,6 @@ class ABP {
         }
                 
     }
-    
-    /*
-    public boolean insere(int valor){
-
-        No novoNo = new No();
-        novoNo.setConteudo(valor);
-        novoNo.setEsq(null);
-        novoNo.setDir(null);
-
-        if (raiz == null) { // Arvore vazia
-            raiz = novoNo;
-            return true;
-        }
-        //counter++;
-        // Procura a posicao correta pra inserir o novo no
-        No aux = raiz;
-        No p = null;
-        while (aux != null) {
-            counter++;
-            p = aux;
-            if (valor < aux.getConteudo()) {
-                aux = aux.getEsq();
-            } else {
-                aux = aux.getDir();
-            }
-        }
-
-        // Encontrou um nÃ³ folha para inserir
-        if (valor < p.getConteudo()) {
-            p.setEsq(novoNo);
-        } else {
-            p.setDir(novoNo);
-        }
-        return true;
-    }*/
 }
 
 class BST {
