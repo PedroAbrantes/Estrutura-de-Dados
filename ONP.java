@@ -90,28 +90,28 @@ class ONP{
         
         for(int i = 0; i < str.length(); i++)
         {
-           char atual = equacao[i];
+            char atual = equacao[i];
            
-           if (atual == '^' || atual == '(')
-           {
-            p.push(atual);
+            if (atual == '^' || atual == '(')
+            {
+                p.push(atual);
             
-           }else if (atual == '*' || atual == '/') 
-           {
+            }else if (atual == '*' || atual == '/') 
+            {
 		if (p.topo() != '^')
                 {
                   
                     p.push(atual);
                 }
-	   }else if (atual == '+' || atual == '-')
-           {
+	    }else if (atual == '+' || atual == '-')
+            {
                 if (p.topo() != '^' && p.topo() != '*' && p.topo() != '/')
                 {
                   
                     p.push(atual);
                 }
-	   }else if ((atual == ')'))
-           {
+	    }else if ((atual == ')'))
+            {
                 while (p.topo() != '(')
                 {
 		System.out.printf("%c", p.topo());
