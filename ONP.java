@@ -77,13 +77,14 @@ class ONP{
         int n = Integer.parseInt(scan.nextLine());
        
         
-        for (int i = 0; i < n ;i++){
+        for (int i = 0; i < n ;i++)
+	{
             String a = scan.nextLine();
-            lista.add(a);
-     
+            lista.add(a);     
         }
         
-        for (String str : lista){
+        for (String str : lista)
+	{
             resultado(str);
         }  
     }
@@ -119,8 +120,8 @@ class ONP{
             {
                 while (p.topo() != '(')
                 {
-			System.out.printf("%c", p.topo());
-			p.pop();
+		    System.out.printf("%c", p.topo());
+		    p.pop();
                 }
                 p.pop();
             }else
