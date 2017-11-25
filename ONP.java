@@ -4,32 +4,35 @@ import java.util.*;
 import java.lang.*;
 
 class ONP{
-    static class pilha{
+    static class Pilha
+    {
         private int dados[];
         private int topo;
         private int tamMax;
 
-        public pilha()
+        public Pilha()
         {
             tamMax = 300;
             dados = new int[tamMax];
             topo = -1;
         }
         
-        public int tamanho(){
+        public int tamanho()
+        {
             return topo + 1;
         }
         
-        public boolean vazia(){
-            if (topo == -1){
-                return true;
-            }
-            else{
+        public boolean vazia()
+        {
+            if (topo == -1)
+                return true; 
+            else
                 return false;
-            }
+
         }
         
-        public boolean cheia(){
+        public boolean cheia()
+        {
             if (topo == (tamMax-1))
                 return true;
             else
@@ -37,32 +40,36 @@ class ONP{
 
         }
              
-        public int topo () {
+        public int topo () 
+        {
             if (vazia())
-            return -1; 
+                return -1; 
 
-        return dados[topo];
+            return dados[topo];
         }
         
-        public int pop() {
-            if (vazia()){
+        public int pop() 
+        {
+            if (vazia())
+            {
                 return -1; // Pilha vazia
             }
+            
             int valor = dados[topo];
             topo--;
             return valor;
         }
         
-        public boolean push (int valor) {
+        public boolean push (int valor) 
+        {
             if (cheia()){
                 return false;
             }
             topo++;
             dados[topo] = valor;
             return true;
-        }
-        
-}
+        }    
+    }
 
     public static LinkedList<String> lista = new LinkedList<String>();
     
@@ -85,7 +92,7 @@ class ONP{
     
     public static void resultado (String str)
     {
-        pilha p = new pilha();
+        Pilha p = new Pilha();
         char equacao[] = str.toCharArray();
         
         for(int i = 0; i < str.length(); i++)
