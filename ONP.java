@@ -11,7 +11,7 @@ class ONP{
 
         public pilha()
         {
-            tamMax = 400;
+            tamMax = 300;
             dados = new int[tamMax];
             topo = -1;
         }
