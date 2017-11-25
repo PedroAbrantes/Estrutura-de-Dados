@@ -51,9 +51,7 @@ class ONP{
         public int pop() 
         {
             if (vazia())
-            {
-                return -1; // Pilha vazia
-            }
+                return -1;
             
             int valor = dados[topo];
             topo--;
@@ -62,9 +60,9 @@ class ONP{
         
         public boolean push (int valor) 
         {
-            if (cheia()){
+            if (cheia())
                 return false;
-            }
+		
             topo++;
             dados[topo] = valor;
             return true;
