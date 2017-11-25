@@ -100,27 +100,27 @@ class ONP{
             if (atual == '^' || atual == '(')
             {
                 p.push(atual);
-            
+		    
             }else if (atual == '*' || atual == '/') 
             {
 		if (p.topo() != '^')
                 {
-                  
                     p.push(atual);
                 }
+		    
 	    }else if (atual == '+' || atual == '-')
             {
                 if (p.topo() != '^' && p.topo() != '*' && p.topo() != '/')
                 {
-                  
                     p.push(atual);
                 }
+		    
 	    }else if ((atual == ')'))
             {
                 while (p.topo() != '(')
                 {
-		System.out.printf("%c", p.topo());
-		p.pop();
+			System.out.printf("%c", p.topo());
+			p.pop();
                 }
                 p.pop();
             }else
